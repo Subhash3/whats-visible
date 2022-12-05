@@ -5,6 +5,6 @@
 ### Todo
 - [x] Contacts
 - [x] Messages
-- [ ] Active chat header details
+- [x] Active chat header details
 - [ ] Find out when the while ui loads
 - [ ] Extension UI
