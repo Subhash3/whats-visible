@@ -4,7 +4,8 @@ console.log("nice")
 
 let state = {
     blurMessages: true,
-    blurContacts: true
+    blurContacts: true,
+    blurConversationHeader: true
 }
 
 /**
@@ -32,16 +33,25 @@ function blurElement(element, value) {
     })
 }
 
+function changeConversationHeaderBlur() {
+    const conversationHeader = document.querySelector("[data-testid='conversation-header']")
+
+    blurElement(conversationHeader, state.blurConversationHeader)
+}
+
 function changeContactBlur(){
     const chatList = document.querySelector("[aria-label='Chat list']")
 
     const contacts = [...chatList.children]
     contacts.forEach(contact => {
-        blurElement(contact)
+        blurElement(contact, state.blurContacts)
 
         contact.addEventListener("click", (e) => {
             // console.log("click")
-            changeMessageBlur()
+            setTimeout(() => {
+                changeMessageBlur()
+                changeConversationHeaderBlur()
+            }, 100)
         })
     })
 }
