@@ -65,9 +65,25 @@ function main(){
     changeContactBlur()
 }
 
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function tryUntilLoaded() {
+    while(true){
+        let paneSide = document.querySelector("#pane-side")
+        if(!paneSide){
+            await sleep(1000)
+        }else{
+            return
+        }
+    }
+}
+
 window.addEventListener("load", function load(event){
     window.removeEventListener("load", load, false);
-    setTimeout(() => {
+    tryUntilLoaded().then(() => {
         main()
-    }, 10000)
+    })
 },false);
