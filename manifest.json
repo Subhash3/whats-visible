@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "name": "Whats-visible",
+    "version": "0.01",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://web.whatsapp.com/"
+            ],
+            "js": ["content.js"]
+        }
+    ]
+}
