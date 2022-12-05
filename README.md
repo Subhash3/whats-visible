@@ -1,6 +1,6 @@
 # What's Visible
 
-## A quick and basic chrome extension that lets you control your privacy on web.whatsapp.com
+#### A quick and basic chrome extension that lets you control your privacy on web.whatsapp.com
 
 ### Installation
 - Clone the repo
